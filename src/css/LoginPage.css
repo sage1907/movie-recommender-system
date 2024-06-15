@@ -1,0 +1,87 @@
+/* General page styles */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, rgba(35, 47, 62, 0.8), rgba(28, 41, 56, 0.8)), 
+                url('../SuperHeroes.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+  }
+  
+  /* Container for the login box */
+  .login-container {
+    width: 400px;
+    padding: 40px;
+    background-color: #1c2938;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Center the heading */
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Form group styling */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Label styling */
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  /* Input field styling */
+  input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* Centered button styling */
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0f79af;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  button:hover {
+    background-color: #0c5d85;
+  }
+  
+  /* Paragraph text styling */
+  p {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Anchor link styling */
+  a {
+    color: #0f79af;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  

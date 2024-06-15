@@ -1,0 +1,19 @@
+.show-card {
+    width: 160px;
+    margin: 0 10px;
+  }
+  
+  .show-card img {
+    width: 160px;
+    border-radius: 8px;
+    height: 240px;
+  }
+  
+  .show-title {
+    text-align: center;
+    margin-top: 8px;
+    color: #fff;
+    font-size: 14px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  

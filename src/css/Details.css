@@ -1,0 +1,80 @@
+.details {
+    display: flex;
+    height: 100vh;
+    background-color: #141414;
+    background: linear-gradient(50deg, rgb(235, 164, 246), rgb(77, 10, 154));
+    color: #fff;
+  }
+  
+  .details-sidebar {
+    width: 60px;
+  }
+  
+  .details-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .details-image {
+    width: 300px;
+    height: 400px;
+    border-radius: 5%;
+    padding-top: 5px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+  }
+  
+  .details-info {
+    text-align: center;
+  }
+
+  .details-info h1 {
+    margin: 5px;
+  }
+
+  .details-info p {
+    margin: 5px;
+  }
+  
+  .details-genres {
+    margin-top: 10px;
+  }
+  
+  .genre {
+    display: inline-block;
+    background-color: #333;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+  }
+  
+  .subscribe-button {
+    background-color: #fff;   /* 0f79af*/
+    color: #056791;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+  }
+
+  .fa-play {
+    padding-right: 10px;
+  }
+
+  .subscribe-button:hover {
+    background-color: rgb(230, 224, 224);
+  }
+
+  .add-button {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  

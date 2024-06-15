@@ -1,0 +1,21 @@
+.category-section {
+    margin-bottom: 30px;
+    padding-left: 20px;
+  }
+  
+  .category-section h2 {
+    margin-left: 10px;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .shows-container {
+    display: flex;
+    overflow-x: scroll;
+    padding: 10px 0;
+  }
+  
+  .shows-container::-webkit-scrollbar {
+    display: none;
+  }
+  
