@@ -27,6 +27,31 @@
     margin-bottom: 5px;
     margin-top: 10px;
   }
+
+  .details-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .details-title h1 {
+    margin-left: 40px;
+  }
+  
+  .heart-icon {
+    cursor: pointer;
+    font-size: 30px;
+    color: #ffffff; /* default color */
+  }
+  
+  .heart-icon.fas {
+    color: #ffffff; /* color when favorited */
+  }
+  
+  .heart-icon:hover {
+    color: #edebeb; /* color on hover */
+  }
+  
   
   .details-info {
     text-align: center;

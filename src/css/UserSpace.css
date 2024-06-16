@@ -31,39 +31,6 @@
     margin-bottom: 30px;
   }
   
-  .items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-  
-  .item {
-    background: rgba(255, 255, 255, 0.7);
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-    width: calc(50% - 10px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .item img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-  }
-  
-  .item p {
-    margin-top: 10px;
-    font-size: 1.1em;
-    color: #333;
-  }
-  
-  .item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  }
-  
   .actions {
     display: flex;
     gap: 20px;
@@ -82,13 +49,13 @@
   }
   
   .logout-button {
-    background: linear-gradient(70deg, #c4c4c6, #777676);
+    background-color: #9c9ca6;
     color: #fff;
     font-weight: bold;
   }
   
   .logout-button:hover {
-    background: linear-gradient(70deg, #626263, #3f3f3f);
+    background-color: #626263;
   }
   
   .help-settings-button {

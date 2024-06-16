@@ -1,6 +1,6 @@
 // App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import LoginPage from './LoginPage';
 import Home from './Home';
 import SignUp from './SignUp';
@@ -15,10 +15,14 @@ import Sidebar from './Sidebar';
 import Footer from './Footer';
 
 const App = () => {
+  const location = useLocation();
+
+  const noSidebarFooterPaths = ['/', '/login', '/signup'];
+
+  const showSidebarFooter = !noSidebarFooterPaths.includes(location.pathname);
   return (
-    <Router>
       <div>
-      <Sidebar />
+      {showSidebarFooter && <Sidebar />}
         <div>
           <div className="main-content">
             <Routes>
@@ -35,11 +39,18 @@ const App = () => {
               <Route path="/" element={<LoginPage />} />
             </Routes>
           </div>
-          <Footer />
+          {showSidebarFooter && <Footer />}
         </div>
       </div>
+  );
+};
+
+const AppWrapper = () => {
+  return (
+    <Router>
+      <App />
     </Router>
   );
 };
 
-export default App;
+export default AppWrapper;

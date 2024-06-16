@@ -38,7 +38,18 @@ const Home = () => {
     { id: 21, title: 'No One Will Save You', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHbfXNPnpsy42z0bQiYjS62v4cNnUle7-M4g&s'},
     { id: 22, title: 'Mr. and Mrs. Mahi', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBtS13MrgnbQ4WDOIW66frZwpYOv-wzane3g&s'},
     { id: 23, title: 'Tarot', image: 'https://m.media-amazon.com/images/M/MV5BZGYzYjQ3ZWItMGJlZC00YzAxLTgzMTItYzI5MjY2YjA4Mjk5XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg'},
-    { id: 24, title: 'The Fall Guy', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHlNv4eQEhfsctBFiCEddVjg2E-2x12J4L6w&s'}
+    { id: 24, title: 'The Fall Guy', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHlNv4eQEhfsctBFiCEddVjg2E-2x12J4L6w&s'},
+  ];
+
+  const topPicksForYou = [
+    { id: 25, title: 'Avengers: Endgame', image: 'https://m.media-amazon.com/images/I/91hIN+dNYUL.jpg'},
+    { id: 26, title: 'Taare Zameen Par', image: 'https://m.media-amazon.com/images/I/611JgDfdb7L._AC_UF894,1000_QL80_.jpg'},
+    { id: 27, title: 'Top Gun: Maverick', image: 'https://m.media-amazon.com/images/I/71BokibfVUL._AC_UF894,1000_QL80_.jpg'},
+    { id: 28, title: 'Iron Man 3', image: 'https://i.pinimg.com/736x/be/63/96/be6396378d656325093f62ec5966392b.jpg'},
+    { id: 29, title: 'Yeh Jawaani Hai Deewani', image: 'https://m.media-amazon.com/images/M/MV5BM2UwY2M3NjctM2E1Ni00MGExLWJmZmQtNGViZThiNjYxMjJjXkEyXkFqcGdeQXVyNDYwMjI1MzI@._V1_.jpg'},
+    { id: 30, title: 'Fast & Furious', image: 'https://m.media-amazon.com/images/I/51rhMjr8VDL._AC_UF1000,1000_QL80_.jpg'},
+    { id: 31, title: 'Zindagi Na Milegi Dobara', image: 'https://m.media-amazon.com/images/I/818gvtO-taL._AC_UF1000,1000_QL80_.jpg'},
+    { id: 32, title: '500 Days of Summer', image: 'https://i.pinimg.com/originals/74/49/a9/7449a9524291b11c3e2c1904701a46e5.jpg'},
   ];
 
   return (
@@ -52,6 +63,11 @@ const Home = () => {
         </CategorySection>
         <CategorySection title="Top Movies">
           {topMovies.map((show, index) => (
+            <ShowCard key={index} show={show}/>
+          ))}
+        </CategorySection>
+        <CategorySection title="Top Picks For You">
+          {topPicksForYou.map((show, index) => (
             <ShowCard key={index} show={show}/>
           ))}
         </CategorySection>

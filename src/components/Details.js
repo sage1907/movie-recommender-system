@@ -7,6 +7,11 @@ const Details = () => {
   const { id } = useParams();
   const [showDetails, setShowDetails] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const toggleFavorite = () => {
+    setIsFavorite(!isFavorite);
+  };
 
   useEffect(() => {
     const fetchShowDetails = async () => {
@@ -40,7 +45,13 @@ const Details = () => {
       <div className="details-content">
         <img src={showDetails.image} alt={showDetails.title} className="details-image" />
         <div className="details-info">
-          <h1>{showDetails.title}</h1>
+            <div className="details-title">
+                <h1>{showDetails.title}</h1>
+                <i title='Add to favorites'
+                className={`fa-heart ${isFavorite ? 'fas' : 'far'} heart-icon`} 
+                onClick={toggleFavorite}
+                ></i>
+            </div>
           <p>{showDetails.year} • {showDetails.duration} • {showDetails.language} • {showDetails.rating}</p>
           <p>{showDetails.description}</p>
           <div className="details-genres">

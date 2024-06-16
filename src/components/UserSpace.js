@@ -22,7 +22,7 @@ const UserSpace = () => {
       // Simulate fetching watchlist and continue watching data
       const fetchedWatchlist = [
         { id: 1, title: 'Mirzapur', image: 'https://m.media-amazon.com/images/M/MV5BMWUyYWNiODItNjdmNS00ZDhlLWE0YjQtNGEyMDg3ODJiMTM3XkEyXkFqcGdeQXVyODQ5NDUwMDk@._V1_.jpg' },
-        { id: 2, title: 'Movie 2', image: 'https://m.media-amazon.com/images/M/MV5BOGRmMjc4MjEtM2E4YS00NjM5LWIwYzUtYTFlNTdhMTRhNmJjXkEyXkFqcGdeQXVyMTExMTIzMTA5._V1_FMjpg_UX1000_.jpg' },
+        { id: 2, title: 'Panchayat', image: 'https://m.media-amazon.com/images/M/MV5BOGRmMjc4MjEtM2E4YS00NjM5LWIwYzUtYTFlNTdhMTRhNmJjXkEyXkFqcGdeQXVyMTExMTIzMTA5._V1_FMjpg_UX1000_.jpg' },
       ];
       setWatchlist(fetchedWatchlist);
   
@@ -62,7 +62,7 @@ const UserSpace = () => {
   
         <div className="actions">
           <button className="logout-button">Log Out</button>
-          <button className="help-settings-button">Help & Settings</button>
+          <button className="help-settings-button">Settings</button>
         </div>        
       </div>
     );
