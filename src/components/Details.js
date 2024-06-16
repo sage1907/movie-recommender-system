@@ -49,7 +49,7 @@ const Details = () => {
             ))}
           </div>
           <button className="subscribe-button"><i className="fas fa-play"></i>Watch Now</button>
-          <button className="add-button"><i className="fas fa-add"></i></button>
+          <button className="add-button" title='Add to watchlist'><i className="fas fa-add"></i></button>
         </div>
       </div>
     </div>

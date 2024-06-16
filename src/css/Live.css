@@ -1,0 +1,16 @@
+.live {
+    padding: 20px;
+    color: #fff;
+    background: linear-gradient(75deg, rgb(1, 8, 18), rgb(27, 47, 77), rgb(75, 88, 107));
+    height: 100vh;
+  }
+  
+  .live h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .live p {
+    font-size: 1.2em;
+  }
+  
