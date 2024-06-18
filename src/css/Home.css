@@ -5,7 +5,7 @@
 .content {
   margin-left: 60px;
   padding: 20px;
-  background-color: #1c1c1c;
+  background-color: rgb(3, 16, 32);      /* #1c1c1c */
   width: calc(100% - 60px);
 }
 

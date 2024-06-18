@@ -1,16 +1,84 @@
-.search {
+   .search {
     padding: 20px;
     color: #fff;
     background: linear-gradient(75deg, rgb(1, 8, 18), rgb(27, 47, 77), rgb(75, 88, 107));
-    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  
+
   .search h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .search-bar {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px auto;
+    max-width: 1000px;
   }
   
-  .search p {
-    font-size: 1.2em;
+  .search-input {
+    width: 80%;
+    padding: 10px 10px 10px 40px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
   }
+
+  .search-icon {
+    position: absolute;
+    left: 90px;
+    top: 35%;
+    font-size: 16px;
+    transform: translateY(-50%);
+    color: rgba(93, 96, 96, 0.8);
+  }
+  
+  .search-results {
+    width: 63%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .search-result-item {
+    display: flex;
+    align-items: center;
+    background-color: #1c1c1c;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .search-result-item:hover {
+    background-color: #333;
+  }
+  
+  .search-result-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .search-result-info h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .search-result-info p {
+    margin: 0;
+    color: #bbb;
+  }
+
+  .search-section {
+    margin-left: 60px;
+    padding: 20px;
+    width: calc(100% - 60px);
+  }
+
   

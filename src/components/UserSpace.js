@@ -23,6 +23,10 @@ const UserSpace = () => {
       const fetchedWatchlist = [
         { id: 1, title: 'Mirzapur', image: 'https://m.media-amazon.com/images/M/MV5BMWUyYWNiODItNjdmNS00ZDhlLWE0YjQtNGEyMDg3ODJiMTM3XkEyXkFqcGdeQXVyODQ5NDUwMDk@._V1_.jpg' },
         { id: 2, title: 'Panchayat', image: 'https://m.media-amazon.com/images/M/MV5BOGRmMjc4MjEtM2E4YS00NjM5LWIwYzUtYTFlNTdhMTRhNmJjXkEyXkFqcGdeQXVyMTExMTIzMTA5._V1_FMjpg_UX1000_.jpg' },
+        { id: 1, title: 'Mirzapur', image: 'https://m.media-amazon.com/images/M/MV5BMWUyYWNiODItNjdmNS00ZDhlLWE0YjQtNGEyMDg3ODJiMTM3XkEyXkFqcGdeQXVyODQ5NDUwMDk@._V1_.jpg' },
+        { id: 2, title: 'Panchayat', image: 'https://m.media-amazon.com/images/M/MV5BOGRmMjc4MjEtM2E4YS00NjM5LWIwYzUtYTFlNTdhMTRhNmJjXkEyXkFqcGdeQXVyMTExMTIzMTA5._V1_FMjpg_UX1000_.jpg' },
+        { id: 1, title: 'Mirzapur', image: 'https://m.media-amazon.com/images/M/MV5BMWUyYWNiODItNjdmNS00ZDhlLWE0YjQtNGEyMDg3ODJiMTM3XkEyXkFqcGdeQXVyODQ5NDUwMDk@._V1_.jpg' },
+        { id: 2, title: 'Panchayat', image: 'https://m.media-amazon.com/images/M/MV5BOGRmMjc4MjEtM2E4YS00NjM5LWIwYzUtYTFlNTdhMTRhNmJjXkEyXkFqcGdeQXVyMTExMTIzMTA5._V1_FMjpg_UX1000_.jpg' },
       ];
       setWatchlist(fetchedWatchlist);
   
@@ -36,10 +40,16 @@ const UserSpace = () => {
     return (
       <div className="userspace">
       <Sidebar />
-        <div className="profile-section">
-          <img src={user.profilePic} alt="Profile" className="profile-pic" />
-          <h2>{user.name}</h2>
-          <p>{user.email}</p>
+        <div className="profile-management">
+            <div className="profile-section">
+            <img src={user.profilePic} alt="Profile" className="profile-pic" />
+            <h2>{user.name}</h2>
+            <p>{user.email}</p>
+            </div>
+            <div className="actions">
+            <button className="logout-button">Log Out</button>
+            <button className="help-settings-button">Settings</button>
+            </div>
         </div>
         
         <div className="sections">
@@ -60,10 +70,7 @@ const UserSpace = () => {
           </div>
         </div>
   
-        <div className="actions">
-          <button className="logout-button">Log Out</button>
-          <button className="help-settings-button">Settings</button>
-        </div>        
+                
       </div>
     );
   };

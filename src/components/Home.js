@@ -35,7 +35,7 @@ const Home = () => {
     { id: 18, title: 'Heeramandi', image: 'https://m.media-amazon.com/images/M/MV5BMTkwNmM3ZWMtNDY1Ni00YmFhLTg2ZTgtZmE3NTBmOGUwOTUyXkEyXkFqcGdeQXVyOTI3MzI4MzA@._V1_.jpg'},
     { id: 19, title: 'Premalu', image: 'https://cdn.cinematerial.com/p/297x/trfrzuzv/premalu-indian-movie-poster-md.jpg?v=1708680080'},
     { id: 20, title: 'Laapataa Ladies', image: 'https://upload.wikimedia.org/wikipedia/en/5/52/Laapataa_Ladies_poster.jpg'},
-    { id: 21, title: 'No One Will Save You', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHbfXNPnpsy42z0bQiYjS62v4cNnUle7-M4g&s'},
+    { id: 21, title: 'Spiderman', image: 'https://cdn.marvel.com/content/1x/spidermannwh_hardcover.jpg'},
     { id: 22, title: 'Mr. and Mrs. Mahi', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBtS13MrgnbQ4WDOIW66frZwpYOv-wzane3g&s'},
     { id: 23, title: 'Tarot', image: 'https://m.media-amazon.com/images/M/MV5BZGYzYjQ3ZWItMGJlZC00YzAxLTgzMTItYzI5MjY2YjA4Mjk5XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg'},
     { id: 24, title: 'The Fall Guy', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHlNv4eQEhfsctBFiCEddVjg2E-2x12J4L6w&s'},

@@ -1,32 +1,3 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// import '../css/Sidebar.css';
-
-// const Sidebar = () => {
-//   return (
-//     <div className="sidebar">
-//       <div className="sidebar-logo">
-//         <img src="../images/JPS.png" alt="Logo" />
-//       </div>
-//       <div className="subscribe">
-//         <Link to="/subscribe">subscribe</Link>
-//       </div>
-//       <nav>
-//         <ul>
-//           <li><Link to="/search"><i className="fas fa-search"></i></Link></li>
-//           <li><Link to="/home"><i className="fas fa-home"></i></Link></li>
-//           <li><Link to="/live"><i className="fas fa-tv"></i></Link></li>
-//           <li><Link to="/favorites"><i className="fas fa-bookmark"></i></Link></li>
-//           <li><Link to="/history"><i className="fas fa-history"></i></Link></li>
-//         </ul>
-//       </nav>
-//     </div>
-//   );
-// };
-
-// export default Sidebar;
-
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../css/Sidebar.css';
@@ -35,7 +6,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar-logo">
-        <img src="../images/JPS.png" alt="Logo" />
+        <img src="../images/jps_01.jpg" alt="Logo" />
       </div>
       <div className="subscribe">
         <Link to="/subscribe">subscribe</Link>
