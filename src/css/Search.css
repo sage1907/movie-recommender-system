@@ -1,7 +1,7 @@
    .search {
     padding: 20px;
     color: #fff;
-    background: linear-gradient(75deg, rgb(1, 8, 18), rgb(27, 47, 77), rgb(75, 88, 107));
+    background: linear-gradient(100deg, rgb(1, 8, 18), rgb(3, 16, 32), rgb(75, 88, 107));
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -10,13 +10,14 @@
 
   .search h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 70px;
   }
 
   .search-bar {
     position: relative;
     width: 100%;
-    margin-bottom: 20px auto;
     max-width: 1000px;
+    padding-left: 70px;
   }
   
   .search-input {
@@ -30,6 +31,7 @@
 
   .search-icon {
     position: absolute;
+    padding-left: 70px;
     left: 90px;
     top: 35%;
     font-size: 16px;

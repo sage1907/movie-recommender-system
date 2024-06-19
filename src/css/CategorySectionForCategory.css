@@ -1,0 +1,19 @@
+/* CategorySectionForCategory.css */
+.category-section {
+    margin: 20px 10px 20px 20px;
+}
+
+.category-section h2 {
+    margin-left: 29px;
+    color: white;
+}
+
+.category-section-cards {
+    display: flex;
+    padding: 10px 20px;
+    overflow-x: scroll;
+}
+
+.category-section-cards::-webkit-scrollbar {
+    display: none;
+}
