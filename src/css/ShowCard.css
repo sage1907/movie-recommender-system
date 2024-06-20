@@ -1,6 +1,11 @@
-.show-card {
+  .show-card {
     width: 160px;
     margin: 0 10px;
+    transition: transform 0.3s;
+  }
+
+  .show-card:hover {
+    transform: scale(1.05);
   }
   
   .show-card img {

@@ -5,6 +5,7 @@
     background-position: center;
     color: #fff;
     position: relative;
+    z-index: 0;
 }
 
 .details::before {

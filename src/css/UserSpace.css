@@ -1,7 +1,7 @@
 .userspace {
-    padding: 20px;
+    padding: 20px 20px 20px 40px;
     color: #fff;
-    background: linear-gradient(100deg, rgb(1, 8, 18), rgb(3, 16, 32), rgb(75, 88, 107));
+    background: linear-gradient(90deg, rgb(1, 8, 18), rgb(3, 16, 32), rgb(75, 88, 107));
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@
   
   .sections {
     width: 100%;
-    padding-left: 80px;
+    padding-left: 70px;
   }
   
   .watchlist-section,

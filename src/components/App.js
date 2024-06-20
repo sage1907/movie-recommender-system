@@ -1,6 +1,8 @@
 // App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { WatchlistProvider } from './WatchlistContext';
+import { FavoritesProvider } from './FavoritesContext';
 import LoginPage from './LoginPage';
 import Home from './Home';
 import SignUp from './SignUp';
@@ -47,9 +49,13 @@ const App = () => {
 
 const AppWrapper = () => {
   return (
-    <Router>
-      <App />
-    </Router>
+    <WatchlistProvider>
+      <FavoritesProvider>
+        <Router>
+          <App />
+        </Router>
+      </FavoritesProvider>
+    </WatchlistProvider>
   );
 };
 

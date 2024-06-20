@@ -1,16 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Sidebar from './Sidebar';
+import { useWatchlist } from './WatchlistContext';
+import { useFavorites } from './FavoritesContext';
 import '../css/Details.css';
 
 const Details = () => {
   const { id } = useParams();
   const [showDetails, setShowDetails] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [isFavorite, setIsFavorite] = useState(false);
+  const { watchlist, dispatch: watchlistDispatch } = useWatchlist();
+  const { favorites, dispatch: favoritesDispatch } = useFavorites();
+  const [isInWatchlist, setIsInWatchlist] = useState(false);
+  const [isInFavorites, setIsInFavorites] = useState(false);
 
   const toggleFavorite = () => {
-    setIsFavorite(!isFavorite);
+    if (isInFavorites) {
+      favoritesDispatch({ type: 'REMOVE_FROM_FAVORITES', payload: showDetails });
+    } else {
+      favoritesDispatch({ type: 'ADD_TO_FAVORITES', payload: showDetails });
+    }
+    setIsInFavorites(!isInFavorites);
+  };
+
+  const toggleWatchlist = () => {
+    if (isInWatchlist) {
+      watchlistDispatch({ type: 'REMOVE_FROM_WATCHLIST', payload: showDetails });
+    } else {
+      watchlistDispatch({ type: 'ADD_TO_WATCHLIST', payload: showDetails });
+    }
+    setIsInWatchlist(!isInWatchlist);
   };
 
   useEffect(() => {
@@ -20,6 +39,10 @@ const Details = () => {
         const data = await response.json();
         setShowDetails(data);
         setLoading(false);
+
+        // check if the item is already in watchlist
+        setIsInWatchlist(watchlist.some(item => item.id === data.id));
+        setIsInFavorites(favorites.some(item => item.id === data.id));
       } catch (error) {
         console.error('Error fetching show details:', error);
         setLoading(false);
@@ -27,7 +50,14 @@ const Details = () => {
     };
 
     fetchShowDetails();
-  }, [id]);
+  }, [id, watchlist, favorites]);
+
+  useEffect(() => {
+    if (showDetails) {
+      setIsInWatchlist(watchlist.some(item => item.id === showDetails.id));
+      setIsInFavorites(favorites.some(item => item.id === showDetails.id));
+    }
+  }, [watchlist, favorites, showDetails]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -47,7 +77,7 @@ const Details = () => {
                     <div className="details-title">
                         <h1>{showDetails.title}</h1>
                         <i title="Add to favorites"
-                            className={`fa-heart ${isFavorite ? 'fas' : 'far'} heart-icon`}
+                            className={`fa-heart ${isInFavorites ? 'fas' : 'far'} heart-icon`}
                             onClick={toggleFavorite}
                         ></i>
                     </div>
@@ -59,7 +89,9 @@ const Details = () => {
                         ))}
                     </div>
                     <button className="subscribe-button"><i className="fas fa-play"></i> Watch Now</button>
-                    <button className="add-button" title="Add to watchlist"><i className="fas fa-plus"></i></button>
+                    <button className="add-button" title="Add to watchlist" onClick={toggleWatchlist}>
+                      <i className={`fas ${isInWatchlist ? 'fa-check' : 'fa-plus'}`}></i>
+                    </button>
                 </div>
             </div>
         </div>

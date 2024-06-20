@@ -5,7 +5,7 @@ import '../css/CategorySectionForCategory.css';
 
 const CategorySectionForCategory = ({ title, categories }) => {
     return (
-        <div className="category-section">
+        <div className="category-section-2">
             <h2>{title}</h2>
             <div className="category-section-cards">
                 {categories.map((category, index) => (

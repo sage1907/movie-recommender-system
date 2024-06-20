@@ -5,12 +5,14 @@
 .content {
   margin-left: 60px;
   padding: 20px;
-  background-color: rgb(3, 16, 32);      /* #1c1c1c */
+  /*background-color: rgb(3, 16, 32);      /* #1c1c1c */
+  background: linear-gradient(90deg, rgb(1, 8, 18), rgb(3, 16, 32));
   width: calc(100% - 60px);
 }
 
 .category-section {
   margin-bottom: 30px;
+  padding-left: 20px;
 }
 
 .category-section h2 {
