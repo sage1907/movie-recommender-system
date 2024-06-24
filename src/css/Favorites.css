@@ -3,11 +3,12 @@
     color: #fff;
     background: linear-gradient(90deg, rgb(1, 8, 18), rgb(3, 16, 32), rgb(75, 88, 107));
     height: 100vh;
+    overflow-x: hidden;
   }
   
   .favorites h1 {
-    font-size: 2em;
     margin-bottom: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   
   .favorites p {

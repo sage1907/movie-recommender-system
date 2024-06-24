@@ -3,8 +3,8 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(to bottom right, rgba(35, 47, 62, 0.8), rgba(28, 41, 56, 0.8)), 
-                url('../SuperHeroes.jpg');
+    background: linear-gradient(to bottom right, rgba(35, 47, 62, 0.5), rgba(28, 41, 56, 0.5)), 
+                url('../bg_cinema.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -13,9 +13,10 @@
   .login-container {
     width: 400px;
     padding: 40px;
-    background-color: #1c2938;
+    background: transparent;  /*background-color: #1c2938;*/
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(3px);
   }
   
   h1 {
@@ -68,8 +69,9 @@
   }
   
   a {
-    color: #0f79af;
+    color: #ffffff;
     text-decoration: none;
+    font-weight: bold;
   }
   
   a:hover {

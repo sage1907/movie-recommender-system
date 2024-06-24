@@ -12,7 +12,7 @@ const Favorites = () => {
     <div className="favorites">
     <Sidebar />
     <div className="favorites-content"></div>
-      <h1>your curated favorites</h1>
+      <h1>find all your curated favorites here</h1>
       <CategorySection title="your favorites">
           {favorites.map((show, index) => (
               <ShowCard key={index} show={show}/>

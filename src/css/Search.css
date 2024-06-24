@@ -1,11 +1,13 @@
    .search {
     padding: 20px;
+    padding-right: 0px;
     color: #fff;
     background: linear-gradient(90deg, rgb(1, 8, 18), rgb(3, 16, 32), rgb(75, 88, 107));
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
   }
 
   .search h1 {
@@ -80,6 +82,7 @@
   .search-section {
     margin-left: 60px;
     padding: 20px;
+    padding-left: 0px;
     width: calc(100% - 60px);
   }
 

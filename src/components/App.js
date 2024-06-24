@@ -13,6 +13,7 @@ import Live from './Live';
 import Sports from './Sports';
 import Favorites from './Favorites';
 import Categories from './Categories';
+import Settings from './Settings';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
 
@@ -38,6 +39,7 @@ const App = () => {
               <Route path="/sports" element={<Sports />} />
               <Route path="/favorites" element={<Favorites />} />
               <Route path="/categories" element={<Categories />} />
+              <Route path="/settings" element={<Settings />} />
               <Route path="/" element={<LoginPage />} />
             </Routes>
           </div>

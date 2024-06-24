@@ -67,6 +67,18 @@
     color: #d7d4d4;
 }
 
+.share-icon {
+    cursor: pointer;
+    font-size: 40px;
+    color: #fff;
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
+.share-icon:hover {
+    color: #d8d4d4;
+}
+
 .details-info p {
     margin: 10px 0;
     text-align: left;
@@ -89,7 +101,7 @@
     border-radius: 5px;
 }
 
-.subscribe-button {
+.watch-button {
     background-color: #fff;
     color: #056791;
     padding: 10px 20px;
@@ -102,11 +114,11 @@
     font-weight: bold;
 }
 
-.subscribe-button .fa-play {
+.watch-button .fa-play {
     padding-right: 10px;
 }
 
-.subscribe-button:hover {
+.watch-button:hover {
     background-color: rgb(230, 224, 224);
 }
 

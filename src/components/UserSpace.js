@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../css/UserSpace.css';
 import Sidebar from './Sidebar';
 import CategorySection from './CategorySection';
@@ -9,6 +10,15 @@ const UserSpace = () => {
     const [user, setUser] = useState({});
     const { watchlist } = useWatchlist();
     const [continueWatching, setContinueWatching] = useState([]);
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+      navigate('/login');
+    }
+
+    const handleSettings = () => {
+      navigate('/settings');
+    }
   
     useEffect(() => {
       // Simulate fetching user data
@@ -47,8 +57,8 @@ const UserSpace = () => {
             <p>{user.email}</p>
             </div>
             <div className="actions">
-            <button className="logout-button">Log Out</button>
-            <button className="help-settings-button">Settings</button>
+            <button className="logout-button-1" onClick={handleLogout} >Log Out</button>
+            <button className="help-settings-button" onClick={handleSettings} >Settings</button>
             </div>
         </div>
         

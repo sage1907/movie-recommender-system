@@ -1,0 +1,114 @@
+.settings-page {
+    display: flex;
+    background: linear-gradient(90deg, rgb(1, 8, 18), rgb(3, 16, 32));
+    color: #fff;
+    min-height: 100vh;
+    padding-left: 70px;
+  }
+  
+  .settings-content {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .settings-left {
+    flex: 1;
+    padding: 10px;
+    border-right: 1px solid #333;
+  }
+
+  .settings-left h1 {
+    padding-top: 7px;
+  }
+
+  .left-content {
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+  }
+
+  .left-content-help, .left-content-feedback {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
+  .left-content-help:hover {
+    background-color: #1a1e31;
+  }
+
+  .left-content-feedback:hover {
+    background-color: #1a1e31;
+  }
+  
+  .left-content-help p , .left-content-feedback p {
+    text-align: left;
+  }
+  
+  .settings-right {
+    flex: 2;
+    padding: 20px;
+  }
+  
+  .settings-right h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .right-header {
+    display: flex;
+    justify-content: space-between;
+    max-height: 50px;
+    padding: 60px 0px;
+  }
+  
+  .subscription-info, .device-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0px;
+  }
+  
+  .subscription-info p, .device-info p {
+    margin: 5px 0;
+    font-size: 1.2em;
+  }
+
+  .update-button {
+    width: 25%;
+    background-color: rgb(41, 44, 59);
+    color: #fff;
+    border: none;
+    transform: translateY(-30%);
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .subscribe-button {
+    width: 25%;
+    background-color: rgb(41, 44, 59);
+    color: #fff;
+    border: none;
+    transform: translateY(30%);
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .logout-button {
+    width: 25%;
+    background-color: rgb(41, 44, 59);
+    color: #fff;
+    border: none;
+    transform: translateY(-30%);
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .update-button:hover, .subscribe-button:hover, .logout-button:hover {
+    background-color: #1c1f24;
+  }

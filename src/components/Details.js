@@ -80,6 +80,9 @@ const Details = () => {
                             className={`fa-heart ${isInFavorites ? 'fas' : 'far'} heart-icon`}
                             onClick={toggleFavorite}
                         ></i>
+                        <i title="Share"
+                            className="fas fa-share share-icon"
+                        ></i>
                     </div>
                     <p>{showDetails.year} • {showDetails.language} • {showDetails.rating}</p>
                     <p>{showDetails.description}</p>
@@ -88,7 +91,7 @@ const Details = () => {
                             <span key={index} className="genre">{tag}</span>
                         ))}
                     </div>
-                    <button className="subscribe-button"><i className="fas fa-play"></i> Watch Now</button>
+                    <button className="watch-button"><i className="fas fa-play"></i> Watch Now</button>
                     <button className="add-button" title="Add to watchlist" onClick={toggleWatchlist}>
                       <i className={`fas ${isInWatchlist ? 'fa-check' : 'fa-plus'}`}></i>
                     </button>
