@@ -1,9 +1,9 @@
 import React from 'react';
-import Sidebar from './Sidebar';
+import Sidebar from '../Sidebar/Sidebar';
 import CategorySection from './CategorySection';
 import ShowCard from './ShowCard';
-import '../css/ShowCard.css';
-import '../css/Home.css';
+import '../../css/ShowCard.css';
+import '../../css/Home.css';
 
 const Home = () => {
   const popularShows = [

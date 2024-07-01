@@ -1,51 +1,130 @@
 // App.js
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
-import { WatchlistProvider } from './WatchlistContext';
-import { FavoritesProvider } from './FavoritesContext';
-import LoginPage from './LoginPage';
-import Home from './Home';
-import SignUp from './SignUp';
-import Details from './Details';
-import UserSpace from './UserSpace';
-import Search from './Search';
-import Live from './Live';
-import Sports from './Sports';
-import Favorites from './Favorites';
-import Categories from './Categories';
-import Settings from './Settings';
-import Sidebar from './Sidebar';
-import Footer from './Footer';
+import React, { useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+  Navigate,
+} from "react-router-dom";
+import { WatchlistProvider } from "./WatchlistContext";
+import { FavoritesProvider } from "./FavoritesContext";
+import AuthRoute from "./AuthRoute/AuthRoute";
+import LoginPage from "./Users/Forms/LoginPage";
+import Home from "./HomePage/Home";
+import SignUp from "./Users/Forms/SignUp";
+import Details from "./Details";
+import UserSpace from "./Sidebar/UserSpace";
+import Search from "./Sidebar/Search";
+import Live from "./Sidebar/Live";
+import Sports from "./Sidebar/Sports";
+import Favorites from "./Sidebar/Favorites";
+import Categories from "./CategoryPage/Categories";
+import Settings from "./Settings";
+import Sidebar from "./Sidebar/Sidebar";
+import Footer from "./Footer/Footer";
 
 const App = () => {
   const location = useLocation();
+  const [showSidebarFooter, setShowSidebarFooter] = useState(false);
 
-  const noSidebarFooterPaths = ['/', '/login', '/signup'];
+  useEffect(() => {
+    const noSidebarFooterPaths = ["/login", "/signup"];
+    const user = JSON.parse(localStorage.getItem("userInfo"));
+    const isLoggedIn = user?.token ? true : false;
 
-  const showSidebarFooter = !noSidebarFooterPaths.includes(location.pathname);
+    setShowSidebarFooter(
+      !noSidebarFooterPaths.includes(location.pathname) && isLoggedIn
+    );
+  }, [location]);
+
   return (
-      <div>
+    <div>
       {showSidebarFooter && <Sidebar />}
-        <div>
-          <div className="main-content">
-            <Routes>
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/signup" element={<SignUp />} />
-              <Route path="/userspace" element={<UserSpace />} />
-              <Route path="/search" element={<Search />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/details/:id" element={<Details />}/>
-              <Route path="/live" element={<Live />} />
-              <Route path="/sports" element={<Sports />} />
-              <Route path="/favorites" element={<Favorites />} />
-              <Route path="/categories" element={<Categories />} />
-              <Route path="/settings" element={<Settings />} />
-              <Route path="/" element={<LoginPage />} />
-            </Routes>
-          </div>
-          {showSidebarFooter && <Footer />}
+      <div>
+        <div className="main-content">
+          <Routes>
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/" element={<Navigate to="/home" replace />} />
+
+            <Route
+              path="/userspace"
+              element={
+                <AuthRoute>
+                  <UserSpace />
+                </AuthRoute>
+              }
+            />
+            <Route
+              path="/search"
+              element={
+                <AuthRoute>
+                  <Search />
+                </AuthRoute>
+              }
+            />
+            <Route
+              path="/home"
+              element={
+                <AuthRoute>
+                  <Home />
+                </AuthRoute>
+              }
+            />
+            <Route
+              path="/details/:id"
+              element={
+                <AuthRoute>
+                  <Details />
+                </AuthRoute>
+              }
+            />
+            <Route
+              path="/live"
+              element={
+                <AuthRoute>
+                  <Live />
+                </AuthRoute>
+              }
+            />
+            <Route
+              path="/sports"
+              element={
+                <AuthRoute>
+                  <Sports />
+                </AuthRoute>
+              }
+            />
+            <Route
+              path="/favorites"
+              element={
+                <AuthRoute>
+                  <Favorites />
+                </AuthRoute>
+              }
+            />
+            <Route
+              path="/categories"
+              element={
+                <AuthRoute>
+                  <Categories />
+                </AuthRoute>
+              }
+            />
+            <Route
+              path="/settings"
+              element={
+                <AuthRoute>
+                  <Settings />
+                </AuthRoute>
+              }
+            />
+          </Routes>
         </div>
+        {showSidebarFooter && <Footer />}
       </div>
+    </div>
   );
 };
 

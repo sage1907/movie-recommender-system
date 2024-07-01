@@ -1,9 +1,9 @@
 import React, { useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css/Search.css';
-import CategorySection from './CategorySection';
-import ShowCard from './ShowCard';
-import Sidebar from './Sidebar';
+import '../../css/Search.css';
+import CategorySection from '../HomePage/CategorySection';
+import ShowCard from '../HomePage/ShowCard';
+import Sidebar from '../Sidebar/Sidebar';
 
 const Search = () => {
     const [searchTerm, setSearchTerm] = useState('');

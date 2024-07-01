@@ -1,7 +1,7 @@
 // CategorySectionForCategory.js
 import React, { useState, useRef, useEffect } from 'react';
 import CategoryCard from './CategoryCard';
-import '../css/CategorySectionForCategory.css';
+import '../../css/CategorySectionForCategory.css';
 
 const CategorySectionForCategory = ({ title, categories }) => {
     const [isOverflowing, setIsOverflowing] = useState(false);

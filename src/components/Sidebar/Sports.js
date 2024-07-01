@@ -1,6 +1,6 @@
 import React from 'react';
-import '../css/Sports.css';
-import Sidebar from './Sidebar';
+import '../../css/Sports.css';
+import Sidebar from '../Sidebar/Sidebar';
 
 const Sports = () => {
   return (

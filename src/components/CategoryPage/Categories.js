@@ -1,6 +1,6 @@
 import React from 'react';
-import '../css/Categories.css';
-import Sidebar from './Sidebar';
+import '../../css/Categories.css';
+import Sidebar from '../Sidebar/Sidebar';
 import CategorySectionForCategory from './CategorySectionForCategory';
 
 const popularLanguages = [

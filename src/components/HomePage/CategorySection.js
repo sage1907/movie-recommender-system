@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import '../css/CategorySection.css';
+import '../../css/CategorySection.css';
 
 const CategorySection = ({ title, children }) => {
   const [isOverflowing, setIsOverflowing] = useState(false);

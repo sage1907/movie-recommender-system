@@ -1,6 +1,6 @@
 import React from 'react';
-import '../css/Live.css';
-import Sidebar from './Sidebar';
+import '../../css/Live.css';
+import Sidebar from '../Sidebar/Sidebar';
 
 const Live = () => {
   return (

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css/UserSpace.css';
+import '../../css/UserSpace.css';
 import Sidebar from './Sidebar';
-import CategorySection from './CategorySection';
-import ShowCard from './ShowCard';
-import { useWatchlist } from './WatchlistContext';
+import CategorySection from '../HomePage/CategorySection';
+import ShowCard from '../HomePage/ShowCard';
+import { useWatchlist } from '../WatchlistContext';
 
 const UserSpace = () => {
     const [user, setUser] = useState({});
@@ -13,7 +13,9 @@ const UserSpace = () => {
     const navigate = useNavigate();
 
     const handleLogout = () => {
+      localStorage.removeItem('userInfo');
       navigate('/login');
+      window.location.reload();
     }
 
     const handleSettings = () => {

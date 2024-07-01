@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../css/ShowCard.css';
+import '../../css/ShowCard.css';
 
 const ShowCard = ({ show }) => {
   return (
