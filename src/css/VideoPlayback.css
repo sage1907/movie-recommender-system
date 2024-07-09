@@ -1,0 +1,68 @@
+.video-playback-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-top: 0px;
+    background-color: rgba(1, 8, 18);
+    color: #fff;
+    min-height: 100vh;
+  }
+  
+  .video-playback-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    margin-top: 0px;
+  }
+  
+  .video-player-wrapper {
+    position: relative;
+    width: 80%;
+    max-width: 1200px;
+    aspect-ratio: 16 / 9;
+    background-color: rgba(1, 8, 18);
+    border: 1px solid #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .video-player {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  .video-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .video-control-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .video-control-button:hover {
+    color: #1db954;
+  }
+  
+  @media (max-width: 768px) {
+    .video-playback-title {
+      font-size: 1.5em;
+    }
+  
+    .video-player-wrapper {
+      width: 100%;
+    }
+  
+    .video-control-button {
+      font-size: 1.2em;
+    }
+  }
+  

@@ -1,0 +1,83 @@
+/* .video-player {
+    position: relative;
+    background: linear-gradient(rgba(1, 8, 18), rgba(3, 16, 32));
+    width: 100%;
+    height: 100vh;
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .play-pause-button, .rewind-button, .fast-forward-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  input[type="range"] {
+    width: 100px;
+  }
+   */
+
+
+   .video-player-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-top: 60px;
+    padding-bottom: 0px;
+    background-color: rgba(1, 8, 18);
+    min-height: 70vh;
+  }
+  
+  .video-player {
+    width: 100% !important;
+    max-width: 800px;
+    height: 500px !important;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: rgba(1, 8, 18);
+  }
+  
+  .video-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .video-control-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .video-control-button:hover {
+    color: #1db954;
+  }
+  
+  @media (max-width: 768px) {
+    .video-control-button {
+      font-size: 1.2em;
+    }
+  }
+  

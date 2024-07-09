@@ -7,7 +7,9 @@ const Settings = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    navigate("/login");
+    localStorage.removeItem('userInfo');
+      navigate('/login');
+      window.location.reload();
   }
 
   return (

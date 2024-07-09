@@ -5,11 +5,11 @@ import {
   Route,
   Routes,
   useLocation,
-  Navigate,
 } from "react-router-dom";
 import { WatchlistProvider } from "./WatchlistContext";
 import { FavoritesProvider } from "./FavoritesContext";
 import AuthRoute from "./AuthRoute/AuthRoute";
+import VideoPlayback from "./VideoPlayer/VideoPlayback";
 import LoginPage from "./Users/Forms/LoginPage";
 import Home from "./HomePage/Home";
 import SignUp from "./Users/Forms/SignUp";
@@ -29,7 +29,7 @@ const App = () => {
   const [showSidebarFooter, setShowSidebarFooter] = useState(false);
 
   useEffect(() => {
-    const noSidebarFooterPaths = ["/login", "/signup"];
+    const noSidebarFooterPaths = ["/", "/login", "/signup"];
     const user = JSON.parse(localStorage.getItem("userInfo"));
     const isLoggedIn = user?.token ? true : false;
 
@@ -46,7 +46,7 @@ const App = () => {
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/" element={<Navigate to="/home" replace />} />
+            <Route path="/" element={<LoginPage />} />
 
             <Route
               path="/userspace"
@@ -117,6 +117,14 @@ const App = () => {
               element={
                 <AuthRoute>
                   <Settings />
+                </AuthRoute>
+              }
+            />
+            <Route
+              path="/watch"
+              element={
+                <AuthRoute>
+                  <VideoPlayback />
                 </AuthRoute>
               }
             />

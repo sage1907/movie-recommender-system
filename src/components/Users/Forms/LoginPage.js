@@ -32,8 +32,8 @@ const LoginPage = () => {
 
   //redirect
   useEffect(() => {
-    if (userInfo?.status === "success") {
-      navigate("/");
+    if (userInfo?.status.toLowerCase() === "success") {
+      navigate("/home");
     } else {
       console.log("user not found");
     }

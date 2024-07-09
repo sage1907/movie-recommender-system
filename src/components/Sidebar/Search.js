@@ -24,7 +24,7 @@ const Search = () => {
       setSearchTerm(event.target.value);
       if (event.target.value.length > 2) {
         try {
-          const response = await fetch(`/api/search?query=${event.target.value}`);
+          const response = await fetch(`http://localhost:8000/api/search?query=${event.target.value}`);
           const data = await response.json();
           setResults(data);
         } catch (error) {
