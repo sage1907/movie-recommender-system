@@ -5,7 +5,7 @@ import '../../css/ShowCard.css';
 const ShowCard = ({ show }) => {
   return (
     <div className="show-card">
-      <Link to={`/details/${show.id}`}>
+      <Link to={`/details/${show.id}`} className="show-card-link" >
         <img src={show.image} alt={show.title} />
         <div className="show-title">{show.title}</div>
       </Link>

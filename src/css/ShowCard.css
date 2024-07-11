@@ -22,4 +22,12 @@
     font-weight: 500;
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
+
+  .show-card-link {
+    text-decoration: none;
+  }
+  
+  .show-card-link:hover {
+    text-decoration: none;
+  }
   

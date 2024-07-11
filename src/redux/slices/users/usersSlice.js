@@ -31,7 +31,6 @@ export const registerUserAction = createAsyncThunk(
     { rejectWithValue, getState, dispatch }
   ) => {
     try {
-      console.log(email);
       //make the http request
       const { data } = await axios.post(`${baseURL}/users/register`, {
         email,
@@ -58,8 +57,8 @@ export const getUserProfileAction = createAsyncThunk(
           Authorization: `Bearer ${token}`,
         },
       };
-      const { data } = await axios.get(`${baseURL}/users/profile`, config);
-      return data;
+      const { data } = await axios.get(`${baseURL}/users/profile-pii`, config);
+      return data.data;
     } catch (error) {
       console.log(error);
       return rejectWithValue(error?.response?.data);

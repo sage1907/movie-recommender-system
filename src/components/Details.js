@@ -120,10 +120,10 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Sidebar from './Sidebar/Sidebar';
-import { useWatchlist } from './WatchlistContext';
-import { useFavorites } from './FavoritesContext';
 import { fetchContentDetailsAction } from '../redux/slices/contents/contentsSlice';
+import { addToWatchlist, removeFromWatchlist } from '../redux/slices/users/watchlistSlice';
 import '../css/Details.css';
+import { addToFavorites, removeFromFavorites } from '../redux/slices/users/favoriteslistSlice';
 
 const Details = () => {
   const { id } = useParams();
@@ -131,40 +131,40 @@ const Details = () => {
   const dispatch = useDispatch();
   const { contentDetails, loading, error } = useSelector((state) => state.content);
   const [showDetails, setShowDetails] = useState(null);
-  const { watchlist, dispatch: watchlistDispatch } = useWatchlist();
-  const { favorites, dispatch: favoritesDispatch } = useFavorites();
+  const { watchlist } = useSelector((state) => state.watchlist);
+  // const { favorites } = useSelector((state) => state.favorites.favorites);
   const [isInWatchlist, setIsInWatchlist] = useState(false);
   const [isInFavorites, setIsInFavorites] = useState(false);
 
   const toggleFavorite = () => {
     if (isInFavorites) {
-      favoritesDispatch({ type: 'REMOVE_FROM_FAVORITES', payload: showDetails });
+      dispatch(removeFromFavorites(showDetails._id));
     } else {
-      favoritesDispatch({ type: 'ADD_TO_FAVORITES', payload: showDetails });
+      dispatch(addToFavorites(showDetails._id));
     }
     setIsInFavorites(!isInFavorites);
   };
 
   const toggleWatchlist = () => {
     if (isInWatchlist) {
-      watchlistDispatch({ type: 'REMOVE_FROM_WATCHLIST', payload: showDetails });
+      dispatch(removeFromWatchlist(showDetails._id));
     } else {
-      watchlistDispatch({ type: 'ADD_TO_WATCHLIST', payload: showDetails });
+      dispatch(addToWatchlist(showDetails._id));
     }
     setIsInWatchlist(!isInWatchlist);
   };
 
   useEffect(() => {
-    dispatch(fetchContentDetailsAction(id));
+      dispatch(fetchContentDetailsAction(id));
   }, [dispatch, id]);
 
   useEffect(() => {
     if (contentDetails) {
       setShowDetails(contentDetails);
       setIsInWatchlist(watchlist.some((item) => item.id === contentDetails.id));
-      setIsInFavorites(favorites.some((item) => item.id === contentDetails.id));
+      // setIsInFavorites(favorites.some((item) => item.id === contentDetails.id));
     }
-  }, [contentDetails, watchlist, favorites]);
+  }, [contentDetails, watchlist]);
 
   if (loading) {
     return <div>Loading...</div>;
