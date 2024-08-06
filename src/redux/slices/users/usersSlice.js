@@ -147,6 +147,11 @@ const usersSlice = createSlice({
     builder.addCase(resetErrAction.pending, (state) => {
       state.error = null;
     });
+    // Reset success
+    builder.addCase(resetSuccessAction.pending, (state) => {
+      state.isAdded = false;
+      state.isRemoved = false;
+    });
   },
 });
 

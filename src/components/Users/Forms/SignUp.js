@@ -33,7 +33,7 @@ const SignUp = () => {
     if (user) {
       navigate("/login");
     }
-  }, [user]);
+  }, [navigate, user]);
 
   return (
     <div className="login-page">

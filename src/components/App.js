@@ -6,8 +6,6 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
-import { WatchlistProvider } from "./WatchlistContext";
-import { FavoritesProvider } from "./FavoritesContext";
 import AuthRoute from "./AuthRoute/AuthRoute";
 import VideoPlayback from "./VideoPlayer/VideoPlayback";
 import LoginPage from "./Users/Forms/LoginPage";
@@ -138,13 +136,9 @@ const App = () => {
 
 const AppWrapper = () => {
   return (
-    <WatchlistProvider>
-      <FavoritesProvider>
-        <Router>
-          <App />
-        </Router>
-      </FavoritesProvider>
-    </WatchlistProvider>
+    <Router>
+      <App />
+    </Router>
   );
 };
 

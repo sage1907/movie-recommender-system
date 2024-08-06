@@ -8,12 +8,14 @@ import {
 
 // Initial state
 const initialState = {
-  favorites: [], // Ensure this array is initialized properly
+  favorites: localStorage.getItem("favorites")
+    ? JSON.parse(localStorage.getItem("favorites"))
+    : [],
   loading: false,
   error: null,
 };
 
-// Async thunk to add to watchlist
+// Async thunk to add to favorites
 export const addToFavorites = createAsyncThunk(
   "favorites/addToFavorites",
   async (contentId, { rejectWithValue, getState }) => {
@@ -24,18 +26,17 @@ export const addToFavorites = createAsyncThunk(
           Authorization: `Bearer ${token}`,
         },
       };
-      const response = await axios.put(
-        `${baseURL}/clients/favlist/${contentId}`,
-        config
-      );
-      return response.data;
+      const { data } = await axios.put(`${baseURL}/clients/favlist/${contentId}`, {}, config);
+      const updatedFavorites = [...getState().favorites, data];
+      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+      return data;
     } catch (error) {
       return rejectWithValue(error.response.data);
     }
   }
 );
 
-// Async thunk to remove from watchlist
+// Async thunk to remove from favorites
 export const removeFromFavorites = createAsyncThunk(
   "favorites/removeFromFavorites",
   async (contentId, { rejectWithValue, getState }) => {
@@ -46,18 +47,16 @@ export const removeFromFavorites = createAsyncThunk(
           Authorization: `Bearer ${token}`,
         },
       };
-      const response = await axios.delete(
-        `${baseURL}/clients/favlist/${contentId}`,
-        config
-      );
-      return response.data;
+      const { data } = await axios.delete(`${baseURL}/clients/favlist/${contentId}`, config);
+      const updatedFavorites = getState().favorites.filter(item => item.id !== contentId);
+      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+      return data;
     } catch (error) {
       return rejectWithValue(error.response.data);
     }
   }
 );
 
-// Fetch favorites action
 export const fetchFavoritesAction = createAsyncThunk(
   "favorites/list",
   async (_, { rejectWithValue, getState }) => {
@@ -68,7 +67,8 @@ export const fetchFavoritesAction = createAsyncThunk(
           Authorization: `Bearer ${token}`,
         },
       };
-      const { data } = await axios.get(`${baseURL}/favlist`, config);
+      const { data } = await axios.get(`${baseURL}/clients/favlist`, config);
+      localStorage.setItem("favorites", JSON.stringify(data));
       return data.data;
     } catch (error) {
       return rejectWithValue(error?.response?.data);
@@ -87,7 +87,7 @@ const favoritesSlice = createSlice({
       })
       .addCase(addToFavorites.fulfilled, (state, action) => {
         state.loading = false;
-        state.favorites.push(action.payload); // Ensure state.favorites is properly initialized
+        state.favorites.push(action.payload);
       })
       .addCase(addToFavorites.rejected, (state, action) => {
         state.loading = false;
@@ -106,7 +106,6 @@ const favoritesSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       });
-
     // Fetch favorites
     builder.addCase(fetchFavoritesAction.pending, (state) => {
       state.loading = true;
@@ -133,6 +132,6 @@ const favoritesSlice = createSlice({
   },
 });
 
-const favlistReducer = favoritesSlice.reducer;
+const favoritesReducer = favoritesSlice.reducer;
 
-export default favlistReducer;
+export default favoritesReducer;

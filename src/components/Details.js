@@ -122,19 +122,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import Sidebar from './Sidebar/Sidebar';
 import { fetchContentDetailsAction } from '../redux/slices/contents/contentsSlice';
 import { addToWatchlist, removeFromWatchlist } from '../redux/slices/users/watchlistSlice';
-import '../css/Details.css';
 import { addToFavorites, removeFromFavorites } from '../redux/slices/users/favoriteslistSlice';
+import '../css/Details.css';
 
 const Details = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { contentDetails, loading, error } = useSelector((state) => state.content);
-  const [showDetails, setShowDetails] = useState(null);
   const { watchlist } = useSelector((state) => state.watchlist);
-  // const { favorites } = useSelector((state) => state.favorites.favorites);
-  const [isInWatchlist, setIsInWatchlist] = useState(false);
+  const { favorites } = useSelector((state) => state.favorites);
+  const [showDetails, setShowDetails] = useState(null);
+  const [isInWatchlist, setIsInWatchlist] = useState();
   const [isInFavorites, setIsInFavorites] = useState(false);
+
 
   const toggleFavorite = () => {
     if (isInFavorites) {
@@ -142,7 +143,6 @@ const Details = () => {
     } else {
       dispatch(addToFavorites(showDetails._id));
     }
-    setIsInFavorites(!isInFavorites);
   };
 
   const toggleWatchlist = () => {
@@ -151,20 +151,25 @@ const Details = () => {
     } else {
       dispatch(addToWatchlist(showDetails._id));
     }
-    setIsInWatchlist(!isInWatchlist);
   };
 
   useEffect(() => {
-      dispatch(fetchContentDetailsAction(id));
+    dispatch(fetchContentDetailsAction(id));
   }, [dispatch, id]);
 
   useEffect(() => {
     if (contentDetails) {
       setShowDetails(contentDetails);
-      setIsInWatchlist(watchlist.some((item) => item.id === contentDetails.id));
-      // setIsInFavorites(favorites.some((item) => item.id === contentDetails.id));
+      setIsInWatchlist(Array.isArray(watchlist) && watchlist.some((item) => item._id._id === contentDetails._id));
+      setIsInFavorites(Array.isArray(favorites) && favorites.some((item) => item._id._id === contentDetails._id));
+
+      // const isWatchlist = watchlist.data.find((item) => item._id._id === contentDetails._id);
+      // const isFavorite = favorites.data.find((item) => item._id._id === contentDetails._id);
+
+      // setIsInWatchlist(isWatchlist);
+      // setIsInFavorites(isFavorite);
     }
-  }, [contentDetails, watchlist]);
+  }, [contentDetails, watchlist, favorites]);
 
   if (loading) {
     return <div>Loading...</div>;
