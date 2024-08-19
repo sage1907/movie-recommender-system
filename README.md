@@ -3,6 +3,6 @@ A repository for all the codes used in making movie recommendation system. It is
 Please go to master branch and beta branch for detailed view.
 
 Contributors:
-Sagar Basak
-Joyabrata Acharyya
-Prayas Mazumder
+Sagar Basak,
+Joyabrata Acharyya,
+Prayas Mazumder.
