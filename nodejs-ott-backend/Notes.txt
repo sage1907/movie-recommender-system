@@ -1,0 +1,56 @@
+User Model:
+This model represents all users of your platform, including Admins, Managers, and regular Users.
+Fields might include:
+username (String)
+password (String, hashed)
+role (String, enum: 'admin', 'manager', 'user')
+email (String)
+Other relevant user information as needed.
+
+Content Model:
+This model represents the content available on your platform (e.g., movies, TV shows, videos).
+Fields might include:
+title (String)
+description (String)
+genre (String or Array of Strings)
+releaseDate (Date or String)
+director (String)
+cast (Array of Strings)
+duration (String or Number, representing duration in minutes or hours)
+rating (Number or String, like IMDb rating)
+thumbnailUrl (String, URL to the thumbnail image)
+videoUrl (String, URL to the video file or streaming endpoint)
+
+Review Model(optional):
+This model allows users to review and rate content.
+Fields might include:
+user (Reference to User model)
+content (Reference to Content model)
+rating (Number, 1-5)
+comment (String, optional)
+createdAt (Date)
+
+Genre Model (optional):
+This model defines categories or genres that can be assigned to content.
+Fields might include:
+name (String)
+description (String)
+
+Activity/Log Model (optional):
+This model tracks important activities on the platform for auditing purposes.
+Fields might include:
+user (Reference to User model)
+action (String, description of the action performed)
+timestamp (Date)
+
+Session Model (optional):
+This model tracks active user sessions for managing logged-in sessions.
+Fields might include:
+user (Reference to User model)
+accessToken (String, JWT token or session ID)
+createdAt (Date)
+expiresAt (Date, optional depending on session management needs)
+
+
+Errors:
+{{baseURL}}/contents/create
