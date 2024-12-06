@@ -23,7 +23,6 @@ For a detailed walkthrough of the application, watch the demo video:
 
 - **Frontend:** React, CSS
 - **Backend:** Node.js, Express.js, MongoDB
-- **Deployment:** Vercel (Frontend), Render (Backend)
 
 ## Getting Started
 
@@ -63,9 +62,9 @@ To get started with the project locally, follow these steps:
    Open your browser and go to `http://localhost:5173`.
 
 ## Contributors
-Sagar Basak
-Joyabrata Acharyya
-Prayas Mazumder
+- Sagar Basak
+- Joyabrata Acharyya
+- Prayas Mazumder
 
 
 ---
